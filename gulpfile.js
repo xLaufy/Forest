@@ -9,6 +9,7 @@ const imagemin = require('gulp-imagemin');
 const sourcemaps = require('gulp-sourcemaps');
 const clean = require('gulp-clean');
 const kit = require('gulp-kit');
+const { notify } = require('browser-sync');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
 
@@ -70,7 +71,8 @@ function startBrowserSync(done) {
     browserSync.init({
         server: {
             baseDir: "./"
-        }
+        },
+        notify:false
     });
 
     done()

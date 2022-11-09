@@ -1,0 +1,33 @@
+
+@use '..//sass/nav';
+// @use '..//sass/header';
+@use '..//sass/main';
+@use '..//sass/footer';
+
+
+
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.6rem;
+}
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}

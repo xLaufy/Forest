@@ -1,6 +1,6 @@
 
 @use '..//sass/nav';
-// @use '..//sass/header';
+@use '..//sass/header';
 @use '..//sass/main';
 @use '..//sass/footer';
 
@@ -21,8 +21,8 @@ html {
 }
 
 body {
-	width: 100vw;
-	height: 100vh;
+	// width: 100vw;
+	// height: 100vh;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1.6rem;
 }

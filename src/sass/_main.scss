@@ -36,19 +36,18 @@
 	width: 100%;
 	padding: 5em 2em;
 	justify-content: center;
-    align-items: center;
-	background-image: url(/dist/img/girl.jpg);
+	align-items: center;
+	background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(/dist/img/girl.jpg);
 	background-size: cover;
 	background-position: center;
 
 	overflow: hidden;
 
 	&__text {
-		
 		text-align: center;
 		color: white;
-		padding: 0.8em 4em; 
-		font-size: 3.6rem;
+		padding: 0.8em 4em;
+		font-size: clamp(18px, 3.6rem, 5vw);
 		font-weight: 400;
 		border: 1px solid white;
 	}
@@ -58,6 +57,7 @@
 }
 
 @media (max-width: 685px) {
+
 }
 
 @media (min-width: 1200px) {

@@ -55,55 +55,95 @@
 }
 
 .offer {
-	margin: 3em 0;
+	margin: 3em 2em;
+
 	&__heading {
 		text-transform: uppercase;
-		font-weight: 300;
+		font-size: clamp(22px, 3.2rem, 5vw);
+		font-weight: 400;
 		text-align: center;
 	}
 	&__text {
 		margin: 1em 0;
-		padding-bottom: 2em;
+		padding-bottom: 1em;
 		text-align: center;
+		font-size: clamp(10px, 1.6rem, 3vw);
+		font-weight: 500;
 	}
 
 	&__cards {
 		display: flex;
+		flex-wrap: wrap;
 		margin: 0 auto;
-		width: clamp(550px,60vw,70vw);
+		width: 100%;
 		// background-color: red;
-		justify-content: space-between;
+		justify-content: center;
+		gap: 2vw;
 	}
 	&__card {
+		position: relative;
+		margin-bottom: 1em;
+		width: clamp(190px,220px, 30vw);
 		text-align: center;
 		border-radius: 5px;
-		box-shadow: 0 2px 3px 1px rgb(117, 117, 117);
+		box-shadow: 0 2px 3px 1px rgb(160, 160, 160);
+
 		&-title {
 			padding-top: 1em;
-			padding-bottom: .5em;
-			font-size:1.8rem ;
-			font-weight: 300;
+			padding-bottom: 0.5em;
+			font-size: clamp(16px, 2rem, 4vw);
+			font-weight: 500;
 		}
 		&-price {
-			padding-bottom: .5em;
-			font-size:2.6rem ;
-			font-weight: bold;
+			padding-bottom: 0.5em;
+			font-size: clamp(28px, 3.6rem, 5vw);
+			font-weight: 600;
 		}
 		&-list {
-			padding: 0 2em 2em 2em;
-			font-size: 1.2rem;
-			text-align: left;
+			display: flex;
+			flex-direction: column;
+			margin: 2em auto;
+			margin-top: 0;
+			font-size: clamp(10px, 1.3rem, 2vw);
 			list-style-type: none;
 			line-height: 1.5em;
+			font-weight: 500;
 
 			.fa-check {
+				margin-right: 0.5em;
 				color: limegreen;
+				align-items: left;
 			}
-			&-item { 
-				 &--fade {
+			.fa-minus {
+				margin-right: 0.5em;
+			}
+			&-item {
+				&--position {
+					margin-right: 2em;
+				}
+				&--fade {
 					color: grey;
-				 }
+				}
 			}
+		}
+	}
+	&__button {
+		padding: 0.3em 3.5em;
+		margin-bottom: 2em;
+		font-family: 'Cinzel', serif;
+		font-family: 'Raleway', sans-serif;
+		font-size: clamp(8px,1.3rem,1.8vw);
+		background: none;
+		border: none;
+		border-radius: 5px;
+		box-shadow: 0 2px 3px 1px rgb(160, 160, 160);
+		color: darkgrey;
+		cursor: pointer;
+
+		&--color {
+			color: black;
+			background-color: rgb(82, 224, 127);
+			box-shadow: 0 2px 3px 1px rgba(82, 224, 127, 0.879);
 		}
 	}
 }

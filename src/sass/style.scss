@@ -1,11 +1,7 @@
-
 @use '..//sass/nav';
 @use '..//sass/header';
 @use '..//sass/main';
 @use '..//sass/footer';
-
-
-
 
 *,
 *::before,
@@ -22,7 +18,8 @@ html {
 }
 
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cinzel', serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 1.6rem;
 }
 .wrapper {

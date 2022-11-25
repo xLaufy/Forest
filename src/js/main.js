@@ -2,7 +2,7 @@ const burgerBtn = document.querySelector('.burger-btn')
 const navActive = document.querySelector('.nav__mobile')
 const mobileItem = document.querySelectorAll('.nav__item')
 const nav = document.getElementById('spy-nav')
-const sections = [...document.querySelectorAll('.section')]
+const sections = document.querySelectorAll('.section')
 
 function mobileNav() {
 	navActive.classList.toggle('nav__mobile--active')

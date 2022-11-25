@@ -7,7 +7,7 @@
 	background: none;
 	border-radius: 8px;
 	cursor: pointer;
-	z-index: 1000;
+	z-index: 1005;
 
 	&__box {
 		position: relative;
@@ -42,7 +42,7 @@
 
 	&:hover {
 		.burger-btn__bars::before {
-			left: 3vw;
+			translate: -50%;
 		}
 	}
 }
@@ -80,7 +80,6 @@
 		display: flex;
 		position: relative;
 		margin: 0 auto;
-		right: 1em;
 		align-items: center;
 
 		&-item {
@@ -90,7 +89,7 @@
 			width: 90px;
 			min-width: 75px;
 			min-height: 100%;
-			font-size: 1.6rem;
+			font-size: 1.3rem;
 			text-decoration: none;
 			justify-content: center;
 			align-items: center;
@@ -124,6 +123,7 @@
 		transform: translateX(100%);
 		transition: transform 1s;
 		z-index: 1000;
+		
 
 		&--active {
 			transform: translateX(0);
@@ -135,9 +135,10 @@
 		display: block;
 		padding: 1em;
 		margin: 0 auto;
+		width: 120px;
 		text-decoration: none;
 		color: black;
-		background-color: white;
+		transition-duration: .3s;
 
 		&:hover {
 			color: white;
@@ -164,6 +165,7 @@
 	}
 
 	.nav {
+		height: 10vh;
 		&__logo {
 			margin: 0;
 
@@ -186,6 +188,7 @@
 
 @media (max-width: 685px) {
 	.nav {
+		height: 10vh;
 		&__logo {
 			margin: 0;
 			h1 {
@@ -199,7 +202,7 @@
 			}
 		}
 		&__items {
-			left: 10%;
+			margin-right: 1.5em;
 			&-item {
 				text-align: center;
 				font-size: 1.3rem;
@@ -225,7 +228,7 @@
 		&__items {
 			margin-right: 10vw;
 			&-item {
-				font-size: 1.9rem;
+				font-size: 1.6rem;
 				text-align: center;
 			}
 		}

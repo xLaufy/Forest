@@ -50,11 +50,11 @@
 .nav {
 	position: fixed;
 	display: flex;
-	height: 12vh;
-	width: 100%;
+	height: 13vh;
+	width: 100vw;
 	font-size: 2.2rem;
 	background-color: white;
-	
+	z-index: 1000;
 
 	&__logo {
 		position: relative;
@@ -94,10 +94,16 @@
 			text-decoration: none;
 			justify-content: center;
 			align-items: center;
+			border:none;
 			color: black;
-			transition: 0.3s ;
+			transition: 0.3s;
+			
 
 			&:hover {
+				background-color: black;
+				color: white;
+			}
+			&--active {
 				background-color: black;
 				color: white;
 			}
@@ -116,16 +122,14 @@
 		text-align: center;
 		justify-content: center;
 		transform: translateX(100%);
-		transition: transform 1s ;
+		transition: transform 1s;
 		z-index: 1000;
 
 		&--active {
 			transform: translateX(0);
 		}
-
 	}
 
-	
 	&__item {
 		position: relative;
 		display: block;
@@ -134,7 +138,6 @@
 		text-decoration: none;
 		color: black;
 		background-color: white;
-		
 
 		&:hover {
 			color: white;
@@ -145,21 +148,15 @@
 @keyframes mobileAnimation {
 	from {
 		transform: translateX(200%);
-		
 	}
 	to {
 		transform: translateX(0);
-		
 	}
 }
 
 .mobile__animation {
 	animation: mobileAnimation 2s both;
-	
 }
-
-
-
 
 @media (max-width: 576px) {
 	.burger-btn {

@@ -1,0 +1,26 @@
+.footer {
+    
+    background-color: rgb(240, 240, 240);
+
+    .wrapper {
+        display: flex;
+        padding: 1em 2em 2em;
+    }
+    &__logo {
+        width: 50vw;
+        height: 100%;
+    }
+    &__boxes {
+        display: flex;
+        align-items: start;
+        gap: 50px;
+        width: 50vw;
+        
+    }
+
+    &__box {
+        &-list {
+            list-style-type: none;
+        }
+    }
+}

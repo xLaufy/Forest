@@ -5,13 +5,24 @@ const nav = document.getElementById('spy-nav')
 const sections = document.querySelectorAll('.section')
 const offerBtn = document.querySelector('.offer-button')
 const letters = [...document.querySelectorAll('span')]
+const footerYear = document.querySelector('.footer__year')
+
+// nav animation 
 
 function mobileNav() {
 	navActive.classList.toggle('nav__mobile--active')
-
+	
+	mobileItem.forEach( item => {
+		item.addEventListener('click',()=> {
+			navActive.classList.remove('nav__mobile--active')
+		})
+		
+	})
+	
+	
 	const navAnimation = () => {
 		let delayTime = 0
-
+		
 		mobileItem.forEach(item => {
 			item.classList.toggle('mobile__animation')
 			item.style.animationDelay = '.' + delayTime + 's'
@@ -25,49 +36,37 @@ burgerBtn.addEventListener('click', mobileNav)
 
 // OFFER ANIMATION
 
-setInterval(() => {
-	const offerAnimation = () => {
-		let delayTime = 1
+const offerAnimation = () => {
+	letters.forEach(letter => {
+		letter.classList.remove('offer-animation')
+		
+	})
+	let delayTime = .01
+	let index = 0
+	const intervalID = setInterval(() => {
+		const letter = letters[index++]
+		letter.classList.add('offer-animation')
+		letter.style.animationDelay = delayTime + 's'
+		letter.style.color = 'limegreen'
+		
+		
+		
+		setTimeout(() => {
+			letter.style.color = 'black'
+		}, 250)
+		
+		if (index == letters.length) {
+			console.log('XD')
+			clearInterval(intervalID)
+			
+			setTimeout(offerAnimation, 1000)
+		}
+	}, 200)
+}
+offerAnimation()
 
-		letters.forEach((letter, i) => {
-			setInterval(() => {
-				delayTime = 0.01
-				letter.classList.add('offer-animation')
-				letter.style.animationDelay = delayTime + 's'
 
-				delayTime++
-			}, i * 200)
-
-			setTimeout(() => {
-				letter.style.color = 'black'
-			}, 5500)
-		})
-	}
-	offerAnimation()
-}, 1000)
-
-// function delay(delayInMs) {
-// 	return new Promise(resolve => {
-// 	   setTimeout(resolve, delayInMs)
-// 	})
-//   }
-
-//   const offerAnimation = async () => { // added async flag here
-//     // let delayTime = .6
-
-//     for(let item of letters) { // Converted forEach construction to regular  loop in order to maintain subsequence
-
-//       item.classList.toggle('offer-animation');
-//     //   item.style.animationDelay = delayTime + 's'
-
-//       const delayInMs = delayTime * 100 // converting seconds to milliseconds
-//       await delay(delayInMs); // here we waiting for delay
-
-//       delayTime++;
-//     }
-// }
-
-// offerAnimation()
+//
 
 // SCROLLSPY
 
@@ -78,14 +77,14 @@ let options = {
 const spyNav = (entries, observer) => {
 	entries.forEach(entry => {
 		console.log(entry)
-
+		
 		const { id } = entry.target
 		const spyNav = nav.querySelector(`[href="#${id}"`)
-
+		
 		spyNav.classList.remove('nav__items-item--active')
-
+		
 		if (!entry.isIntersecting) return
-
+		
 		spyNav.classList.add('nav__items-item--active')
 	})
 }
@@ -95,3 +94,12 @@ const observer = new IntersectionObserver(spyNav, options)
 sections.forEach(section => {
 	observer.observe(section)
 })
+
+
+// update year in footer  
+
+const handleYear = () => {
+	const year = new Date().getFullYear()
+	footerYear.innerText = year
+}
+handleYear()

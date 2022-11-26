@@ -1,5 +1,6 @@
 .aboutus {
 	z-index: -1;
+	padding-bottom: 2em;
 
 	.heading {
 		text-transform: uppercase;
@@ -186,13 +187,13 @@
 		text-transform: uppercase;
 		letter-spacing: 1px;
 		
-		
 	}
 }
 
 @keyframes offerAnimation {
 	25% {
 		transform: scale(0.8, 1.3);
+		
 	}
 	50% {
 		transform: scale(1.1, 0.8);
@@ -203,10 +204,10 @@
 }
 
 .offer-animation {
-	color: lime;
 	animation: offerAnimation .6s  ;
-	animation-delay: 4s;
+	
 }
+
 
 @keyframes pulse {
 	from {
@@ -270,5 +271,4 @@
 	}
 }
 
-@media (min-width: 1200px) {
-}
+

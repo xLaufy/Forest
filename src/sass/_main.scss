@@ -41,7 +41,6 @@
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(/dist/img/girl.jpg);
 	background-size: cover;
 	background-position: center;
-	
 
 	overflow: hidden;
 
@@ -77,17 +76,17 @@
 		flex-wrap: wrap;
 		margin: 0 auto;
 		width: 100%;
-		// background-color: red;
 		justify-content: center;
 		gap: 2vw;
 	}
 	&__card {
 		position: relative;
 		margin-bottom: 1em;
-		width: clamp(190px,220px, 30vw);
+		width: clamp(190px, 220px, 30vw);
 		text-align: center;
 		border-radius: 5px;
 		box-shadow: 0 2px 3px 1px rgb(160, 160, 160);
+		transition-duration: 0.3s;
 
 		&-title {
 			padding-top: 1em;
@@ -127,25 +126,96 @@
 				}
 			}
 		}
+
+		&:hover {
+			scale: 1.1;
+		}
 	}
 	&__button {
 		padding: 0.3em 3.5em;
 		margin-bottom: 2em;
 		font-family: 'Cinzel', serif;
 		font-family: 'Raleway', sans-serif;
-		font-size: clamp(8px,1.3rem,1.8vw);
+		font-size: clamp(8px, 1.3rem, 1.8vw);
 		background: none;
 		border: none;
 		border-radius: 5px;
 		box-shadow: 0 2px 3px 1px rgb(160, 160, 160);
 		color: darkgrey;
+		transition-duration: 0.3s;
+
 		cursor: pointer;
 
-		&--color {
+		&:hover {
 			color: black;
 			background-color: rgb(82, 224, 127);
 			box-shadow: 0 2px 3px 1px rgba(82, 224, 127, 0.879);
 		}
+	}
+	&-button {
+		position: relative;
+		display: flex;
+		padding: 1em;
+		margin: 0 auto;
+		width: 40%;
+		font-size: clamp(16px, 2.2rem, 3vw);
+		text-decoration: none;
+		justify-content: center;
+		color: black;
+		border: none;
+		transition-duration: 5s;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: auto;
+			width: 100%;
+			height: 100%;
+			border: 1px solid black;
+			border-radius: 8px;
+			opacity: 0;
+		}
+
+		&:hover::before {
+			animation: pulse 1s;
+		}
+	}
+	&__animation {
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		
+		
+	}
+}
+
+@keyframes offerAnimation {
+	25% {
+		transform: scale(0.8, 1.3);
+	}
+	50% {
+		transform: scale(1.1, 0.8);
+	}
+	75% {
+		transform: scale(0.7, 1.2);
+	}
+}
+
+.offer-animation {
+	color: lime;
+	animation: offerAnimation .6s  ;
+	animation-delay: 4s;
+}
+
+@keyframes pulse {
+	from {
+		transform: scale(1);
+		opacity: 0.5;
+	}
+	to {
+		transform: scale(1.4);
+		opacity: 0;
 	}
 }
 
